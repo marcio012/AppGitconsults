@@ -1,6 +1,7 @@
 package br.com.marcioheleno.consultagit.GitHubService.business
 
 import android.util.Log
+import br.com.marcioheleno.consultagit.GitHubService.network.GitHubApi
 import br.com.marcioheleno.consultagit.GitHubService.network.GitHubServices
 import br.com.marcioheleno.consultagit.GitHubService.network.Repository
 import retrofit2.Call
@@ -23,7 +24,7 @@ object BusinessLogic {
 
     private fun executaRequisicao(retrofit: Retrofit){
 
-        val gitHubService = retrofit.create(GitHubServices::class.java)
+        val gitHubService = retrofit.create(GitHubApi::class.java)
         gitHubService.getRepositories("marcio012").enqueue(object : Callback<List<Repository>> {
 
             override fun onResponse(call: Call<List<Repository>>?, response: Response<List<Repository>>?) {
