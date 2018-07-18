@@ -2,7 +2,10 @@ package br.com.marcioheleno.consultagit.GitHubService.view
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.EditText
 import br.com.marcioheleno.consultagit.R
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -11,14 +14,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        val retrofit = configuraRetroFilt()
-
-//        executaRequisicao(retrofit)
-
-//        val retrofit
-//        val businessLogic = BusinessLogic()
-
+        val nome = idPesquisa.text.toString()
+        Log.d("NOME", "{$nome}")
+//        val nomeToString = nome.toString()
+//        buscarRepositorio(nomeToString)
     }
-
 
 }

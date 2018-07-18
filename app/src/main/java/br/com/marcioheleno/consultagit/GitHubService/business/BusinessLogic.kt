@@ -2,7 +2,6 @@ package br.com.marcioheleno.consultagit.GitHubService.business
 
 import android.util.Log
 import br.com.marcioheleno.consultagit.GitHubService.network.GitHubApi
-import br.com.marcioheleno.consultagit.GitHubService.network.GitHubServices
 import br.com.marcioheleno.consultagit.GitHubService.network.Repository
 import retrofit2.Call
 import retrofit2.Callback
@@ -12,18 +11,13 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object BusinessLogic {
 
-
-    private fun configuraRetroFilt(): Retrofit {
-
+    fun configuraRetroFilt(): Retrofit {
         return Retrofit.Builder()
                 .baseUrl("https://api.github.com")
                 .addConverterFactory(GsonConverterFactory.create())
-
                 .build()
     }
-
-    private fun executaRequisicao(retrofit: Retrofit){
-
+    fun executaRequisicao(retrofit: Retrofit){
         val gitHubService = retrofit.create(GitHubApi::class.java)
         gitHubService.getRepositories("marcio012").enqueue(object : Callback<List<Repository>> {
 

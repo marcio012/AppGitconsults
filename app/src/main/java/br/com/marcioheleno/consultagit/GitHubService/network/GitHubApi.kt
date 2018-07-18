@@ -5,8 +5,6 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface GitHubApi {
-
-
     @GET("users/{user}/repos")
     fun getRepositories(@Path("user") user: String): Call<List<Repository>>
 }
